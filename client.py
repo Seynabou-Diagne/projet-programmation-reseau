@@ -1,6 +1,6 @@
 import socket
 import json
-host= '192.168.1.7'
+host= '192.168.10.1'
 port = 5566
 clientInfo = [] #Creation de la variable qui va contenir les information du client
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Creation de socket
@@ -77,5 +77,4 @@ except Exception as e:
 finally:
     #On ferme la connection
     client.close()
-
-
+    
