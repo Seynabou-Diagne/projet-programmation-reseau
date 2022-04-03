@@ -1,12 +1,13 @@
-#coding:utf-8
 import json
 import socket
 import mysql.connector 
-
+host= ''
+port = 5566
 #Script de connection 
 def VerificationInfoBd(liste)->list:
     #connexion a la bd
     try:
+        #Connexion à la BDD projet avec le username tp et le mot de passe tp
         connexion = mysql.connector.connect(host='localhost', database='projet', user='tp', password='tp')
         curseur = connexion.cursor()
         #Requete permettant de recuperer  les information du client dans la base de donnee
@@ -18,6 +19,7 @@ def VerificationInfoBd(liste)->list:
         print(error)
     finally:
         connexion.close()
+ #Script permettant l'inscription d'un client dans la BDD
 def Inscription(liste)->bool:
     try:
         connexion = mysql.connector.connect(host='localhost', database='projet', user='tp', password='tp')
@@ -26,14 +28,12 @@ def Inscription(liste)->bool:
         req = "insert into user(nom,mail,mdp) values('"+liste[0]+"','"+liste[1]+"','"+liste[3]+"')"
         curseur.execute(req)
         connexion.commit();
-        print(req)
         return True
     except mysql.connector.Error as error:
         print(error)
     finally:
         connexion.close()
-host= ''
-port = 5566
+ #Creation du socket
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # Creation de socket
         # Demarrae de server
 server.bind((host, port))
@@ -70,12 +70,12 @@ while True:
     elif data[2]== "Inscription":
         info = Inscription(data)
         if info:
-        #Envoi de message de connxion reussi
+        #Envoi de message d'inscription reussi
             messagesend_2 = f"Inscription reussi"
             messagesend_2 = messagesend_2.encode("utf8")
             conn.sendall(messagesend_2)
         else:
-                #Envoi de message de connxion echoue
+                #Envoi de message d'echec echoue
             messagesend_2 = "Errreur"
             messagesend_2 = messagesend_2.encode("utf8")
             conn.sendall(messagesend_2)
