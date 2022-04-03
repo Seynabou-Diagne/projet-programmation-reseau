@@ -58,20 +58,6 @@ try:
     else:
         print("choix inccorect")
         pass
-    #On ajoute les information saisies par l'utilisateur a la variable clienInfo
-    #clientInfo.append(nom)
-    #clientInfo.append(mail)
-    #clientInfo.append(mdp)
-    #On transforme la variable en JSON
-    #messagesend = json.dumps(clientInfo)
-    #messagesend = messagesend.encode("utf8")
-    #On l'envoi au serveur
-    #client.sendall(messagesend)
-
-    #On recupere la reponse du serveur puis on l'affiche
-    #data = client.recv(1024)
-    #data = data.decode("utf8")
-    #print(data)
 except Exception as e:
     print(e)
 finally:
