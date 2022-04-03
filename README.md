@@ -38,4 +38,6 @@ Commmande pour executer le script : python3 server.py
 
 Ce script s'execute du coté de la machine client , pour le lancer il faudrait au préalable lancer le script du serveur
 Il permet au client de se connecter ou de creer un compte à travers un menu de choix qu'il propose à l'utilisateuur
+
+
 Commmande pour executer le script : python3 client.py
