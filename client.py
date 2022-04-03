@@ -8,7 +8,7 @@ try:
     client.connect((host, port))  # Connexion au server avec le host et le port
     data = client.recv(1024)
     data = data.decode("utf8")
-    print(data)
+    print(data) #Reception et affichage du message provenant du serveur
     print("1. Connexion :")
     print("2. Inscription :")
     print("3. Quitter :")
@@ -50,6 +50,7 @@ try:
                 data = client.recv(1024)
                 data = data.decode("utf8")
         else:
+            #Afficher message si choix incorrect
             print("Les deux mot de passe doivent etre les meme")
         pass
     elif choix == 3 :
