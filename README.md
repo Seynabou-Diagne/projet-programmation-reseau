@@ -17,6 +17,8 @@ Ce script permet l'installation des dépendances de iRedMail ainsi la configurat
 Lancer le script avec ./INSTALL_IREDMAIL.DEPENDENCIES.sh
 
 * Le script INSTALL_ALL_DEPENDENCIES.sh
+
+
 Ce script permet d'executer simultanément les deux scripts précédents.
 Lancer le script avec ./INSTALL_ALL_DEPENDENCIES.sh
 
